@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+
+
+
+<f:view>
+
+	<h:form id = "formInscription">
+	
+		<h:panelGrid border="1" columns="3">
+			<h:outputText value="Nom"></h:outputText>
+			<h:inputText id="fnom" value="#{beanClient.nom}" required="true" requiredmessage="Nom est Obligatoire"></h:inputText><h:message for="fnom"> </h:message>
+			<h:outputText value="Prénom"></h:outputText>
+			<h:inputText id="fprenom" value="#{beanClient.prenom}" required="true" requiredmessage="Prénom est Obligatoire"></h:inputText><h:message for="fprenom"> </h:message>
+			<h:outputText value="Age"></h:outputText>
+			<h:selectOneMenu id="ListeAge">
+			
+			<f:selectItem itemLabel = "18_ ANS" itemValue = "18_ ANS"></f:selectItem>
+			
+			</h:selectOneMenu><h:message for="ListeAge"> </h:message>
+			<h:outputText value="Identifiant"></h:outputText>
+			<h:inputText id="flogin" value="#{beanClient.login}" required="true"></h:inputText><h:message for="flogin"> </h:message>
+			<h:outputText value="Mot de passe"></h:outputText>
+			<h:inputText id="fpwd" value="#{beanClient.password}" required="true"></h:inputText><h:message for="fpwd"> </h:message>
+			<h:outputText value="Genre"></h:outputText>
+			<h:selectOneRadio id="RadioGenre" value="#{beanClient.genre}">
+			
+			<f:selectItem itemLabel="Homme" itemValue="1"></f:selectItem>
+			<f:selectItem itemLabel="Femme" itemValue="2"></f:selectItem>
+
+			</h:selectOneRadio><h:message for="RadioGenre"> </h:message>
+			
+				<h:commandButton value="Valider" action="#{beanClient.valider}"></h:commandButton>
+				<h:commandButton value="Annuler" action="#{beanClient.annuler}" immediate="true"></h:commandButton>
+		</h:panelGrid>
+		
+	</h:form>
+	
+</f:view>
+
+</html>
